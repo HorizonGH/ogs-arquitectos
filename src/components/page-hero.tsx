@@ -12,14 +12,14 @@ export function PageHero({ eyebrow, title, intro }: { eyebrow: string; title: st
             <span className="h-px w-10 bg-primary" /> {eyebrow}
           </p>
           <h1
-            className="max-w-3xl text-5xl font-extrabold leading-[1.02] text-background sm:text-6xl md:text-7xl lg:text-8xl animate-fade-up"
+            className="max-w-3xl text-4xl font-extrabold leading-[1.05] text-background sm:text-5xl md:text-6xl animate-fade-up"
             style={{ animationDelay: "220ms" }}
           >
             {title}
           </h1>
         </div>
         <p
-          className="border-l-2 border-primary pl-6 text-lg leading-relaxed text-background/75 animate-fade-up"
+          className="border-l-2 border-primary pl-6 text-base leading-relaxed text-background/75 animate-fade-up"
           style={{ animationDelay: "380ms" }}
         >
           {intro}

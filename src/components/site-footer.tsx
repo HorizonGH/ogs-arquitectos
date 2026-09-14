@@ -45,7 +45,7 @@ export function SiteFooter() {
         <Reveal>
           <p className="mb-4 text-xs font-extrabold uppercase text-primary">¿Tiene un proyecto?</p>
           <div className="flex flex-col items-start justify-between gap-9 border-b border-background/20 pb-16 md:flex-row md:items-end">
-            <h2 className="max-w-4xl text-5xl font-extrabold leading-tight sm:text-6xl md:text-7xl">
+            <h2 className="max-w-4xl text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl">
               Conversemos sobre cómo hacerlo posible.
             </h2>
             <Button asChild variant="architectural" size="lg">
