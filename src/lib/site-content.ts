@@ -8,9 +8,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import patioImage from "@/assets/project-casa-patio.jpg";
-import galleryImage from "@/assets/project-galeria.jpg";
-import brisasImage from "@/assets/project-brisas.jpg";
+import remodelacionImage from "@/assets/remodelacion-vivienda.webp.asset.json";
+import propuestaImage from "@/assets/propuesta-residencial.webp.asset.json";
+import cafeteriaImage from "@/assets/cafeteria-azul.webp.asset.json";
+import cafeChiquijaiImage from "@/assets/cafe-chiquijai.webp.asset.json";
+import viviendaImage from "@/assets/vivienda-unifamiliar.webp.asset.json";
 
 export type Service = { icon: LucideIcon; number: string; title: string; text: string };
 
@@ -24,7 +26,39 @@ export const services: Service[] = [
 ];
 
 export const projects = [
-  { image: patioImage, title: "Casa Patio", place: "La Habana Vieja", year: "2026", type: "Rehabilitación residencial" },
-  { image: galleryImage, title: "Galería Central", place: "Centro Habana", year: "2025", type: "Reúso adaptativo" },
-  { image: brisasImage, title: "Casa Brisas", place: "Playas del Este", year: "2025", type: "Vivienda unifamiliar" },
+  {
+    image: remodelacionImage.url,
+    title: "Remodelación de vivienda",
+    type: "Diseño interior residencial",
+    description: "Transformación integral de las áreas sociales con una paleta serena, iluminación cálida y mobiliario a medida.",
+    orientation: "portrait" as const,
+  },
+  {
+    image: propuestaImage.url,
+    title: "Vivienda con patio",
+    type: "Propuesta de remodelación",
+    description: "Reorganización de una vivienda para conectar sala, comedor, cocina y patio en una secuencia continua.",
+    orientation: "landscape" as const,
+  },
+  {
+    image: cafeteriaImage.url,
+    title: "Cafetería azul",
+    type: "Remodelación comercial",
+    description: "Una intervención de alto contraste que integra fachada, barra y áreas de servicio en una identidad coherente.",
+    orientation: "portrait" as const,
+  },
+  {
+    image: cafeChiquijaiImage.url,
+    title: "Café Chiquijai",
+    type: "Interiorismo comercial",
+    description: "Vegetación, luz natural y tonos verdes construyen una atmósfera fresca para café y tienda especializada.",
+    orientation: "portrait" as const,
+  },
+  {
+    image: viviendaImage.url,
+    title: "Vivienda unifamiliar",
+    type: "Diseño arquitectónico",
+    description: "Estudio de fachada contemporánea con volúmenes blancos, planos pétreos y protección solar integrada.",
+    orientation: "landscape" as const,
+  },
 ];
