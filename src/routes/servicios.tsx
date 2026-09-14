@@ -12,7 +12,7 @@ export const Route = createFileRoute("/servicios")({
       {
         name: "description",
         content:
-          "Levantamiento técnico, diseño arquitectónico e interiores, dirección de obra, asesoramiento y rehabilitación en La Habana.",
+          "Levantamiento técnico, diseño e intervención de espacios, asesoramiento de obra, documentación, diseño gráfico y presupuestos en La Habana.",
       },
       { property: "og:title", content: "Servicios | OGS Arquitectos" },
       {

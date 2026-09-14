@@ -1,30 +1,27 @@
 import {
-  ArrowDownRight,
-  Building2,
-  ClipboardCheck,
+  Calculator,
   DraftingCompass,
+  FileText,
   HardHat,
+  Palette,
   Ruler,
   type LucideIcon,
 } from "lucide-react";
 
-import patioImage from "@/assets/project-casa-patio.jpg";
-import galleryImage from "@/assets/project-galeria.jpg";
-import brisasImage from "@/assets/project-brisas.jpg";
-
 export type Service = { icon: LucideIcon; number: string; title: string; text: string };
 
 export const services: Service[] = [
-  { icon: Ruler, number: "01", title: "Levantamiento técnico", text: "Documentación precisa del estado actual para tomar decisiones con claridad." },
-  { icon: DraftingCompass, number: "02", title: "Diseño arquitectónico", text: "Proyectos funcionales y sensibles al contexto, desde el concepto hasta el detalle." },
-  { icon: Building2, number: "03", title: "Diseño de interiores", text: "Ambientes coherentes donde materialidad, luz y uso trabajan como un solo sistema." },
-  { icon: HardHat, number: "04", title: "Dirección de obra", text: "Seguimiento técnico para proteger la intención del proyecto durante su ejecución." },
-  { icon: ClipboardCheck, number: "05", title: "Asesoramiento", text: "Criterio profesional para evaluar inmuebles, inversiones y posibilidades de intervención." },
-  { icon: ArrowDownRight, number: "06", title: "Rehabilitación", text: "Nueva vida para estructuras existentes, preservando su carácter y su memoria." },
+  { icon: Ruler, number: "01", title: "Levantamiento y defectación técnica", text: "Medición precisa y documentación del estado real del espacio, base indispensable para cualquier intervención." },
+  { icon: DraftingCompass, number: "02", title: "Diseño e intervención de espacios", text: "Proyectos funcionales y sensibles al contexto, desde el concepto hasta el detalle constructivo." },
+  { icon: HardHat, number: "03", title: "Asesoramiento técnico de ejecución", text: "Criterio profesional durante la ejecución para garantizar coherencia entre el proyecto y la obra." },
+  { icon: FileText, number: "04", title: "Documentación de obra", text: "Planos, memorias y expedientes técnicos gestionados con rigor para cada etapa del proyecto." },
+  { icon: Palette, number: "05", title: "Diseño gráfico y de identidad", text: "Imagen visual coherente para proyectos, marcas y espacios que necesitan comunicar con claridad." },
+  { icon: Calculator, number: "06", title: "Elaboración de presupuestos", text: "Estimaciones detalladas que permiten planificar con precisión los recursos de cada obra." },
 ];
 
 export const projects = [
-  { image: patioImage, title: "Casa Patio", place: "La Habana Vieja", year: "2026", type: "Rehabilitación residencial" },
-  { image: galleryImage, title: "Galería Central", place: "Centro Habana", year: "2025", type: "Reúso adaptativo" },
-  { image: brisasImage, title: "Casa Brisas", place: "Playas del Este", year: "2025", type: "Vivienda unifamiliar" },
+  { image: "/images/cafe-chiquijai.png", title: "Café Chiquijai", place: "La Habana", year: "2024", type: "Diseño de interiores" },
+  { image: "/images/duplex.png", title: "Dúplex", place: "La Habana", year: "2024", type: "Vivienda dúplex" },
+  { image: "/images/cafeteria_interior_barra.jpg", title: "Cafetería", place: "La Habana", year: "2024", type: "Diseño de interiores" },
+  { image: "/images/vivienda-redisenno.png", title: "Vivienda Rediseño", place: "La Habana", year: "2023", type: "Rehabilitación residencial" },
 ];
