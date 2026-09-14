@@ -12,12 +12,12 @@ export const Route = createFileRoute("/proyectos")({
       { title: "Proyectos | OGS Arquitectos" },
       {
         name: "description",
-        content: "Proyectos reales de OGS Arquitectos: remodelación residencial, interiorismo comercial y diseño arquitectónico.",
+        content: "Obra seleccionada de OGS Arquitectos en La Habana: rehabilitación, reúso adaptativo y vivienda.",
       },
       { property: "og:title", content: "Proyectos | OGS Arquitectos" },
       {
         property: "og:description",
-        content: "Una selección de viviendas, cafeterías e interiores desarrollados por OGS Arquitectos.",
+        content: "Una selección de intervenciones recientes con su ubicación, año y tipo de intervención.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,28 +38,15 @@ function ProyectosPage() {
 
       <section className="bg-background py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-10">
-          <div className="grid gap-x-8 gap-y-20 md:grid-cols-12">
+          <div className="grid gap-x-8 gap-y-16">
             {projects.map((project, index) => (
-              <article
-                key={project.title}
-                className={
-                  index === 0
-                    ? "md:col-span-7"
-                    : index === 1
-                      ? "md:col-span-5 md:pt-28"
-                      : index === 2
-                        ? "md:col-span-5"
-                        : index === 3
-                          ? "md:col-span-7 md:pt-24"
-                          : "md:col-span-8 md:col-start-3"
-                }
-              >
-                <div className={`group relative overflow-hidden bg-carbon ${project.orientation === "portrait" ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
+              <article key={project.title} className="grid gap-6 md:grid-cols-12 md:items-start">
+                <div className={`group relative overflow-hidden bg-carbon md:col-span-8 ${index % 2 === 1 ? "md:order-2" : ""} aspect-[4/3]`}>
                   <img
                     src={project.image}
-                    alt={`${project.title}, ${project.type}`}
-                    width={project.orientation === "portrait" ? 1024 : 1280}
-                    height={project.orientation === "portrait" ? 1280 : 960}
+                    alt={`${project.title}, ${project.type} en ${project.place}`}
+                    width={1200}
+                    height={900}
                     loading="lazy"
                     className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                   />
@@ -67,13 +54,22 @@ function ProyectosPage() {
                     <ArrowDownRight />
                   </span>
                 </div>
-                <div className="grid gap-4 border-t-2 border-foreground pt-4 sm:grid-cols-[1fr_1.1fr]">
-                  <div>
-                    <p className="mb-2 text-xs font-extrabold text-primary-strong">0{index + 1}</p>
-                    <h2 className="text-2xl font-extrabold sm:text-3xl">{project.title}</h2>
-                    <p className="mt-2 text-sm font-semibold text-muted-foreground">{project.type}</p>
-                  </div>
-                  <p className="text-sm leading-relaxed text-muted-foreground sm:pt-7">{project.description}</p>
+                <div className="md:col-span-4">
+                  <h2 className="border-t-2 border-foreground pt-4 text-3xl font-extrabold">{project.title}</h2>
+                  <dl className="mt-6 space-y-4 text-sm">
+                    <div className="flex justify-between border-b border-border pb-3">
+                      <dt className="font-semibold text-muted-foreground">Año</dt>
+                      <dd className="font-bold">{project.year}</dd>
+                    </div>
+                    <div className="flex justify-between border-b border-border pb-3">
+                      <dt className="font-semibold text-muted-foreground">Ubicación</dt>
+                      <dd className="font-bold">{project.place}</dd>
+                    </div>
+                    <div className="flex justify-between border-b border-border pb-3">
+                      <dt className="font-semibold text-muted-foreground">Intervención</dt>
+                      <dd className="font-bold">{project.type}</dd>
+                    </div>
+                  </dl>
                 </div>
               </article>
             ))}

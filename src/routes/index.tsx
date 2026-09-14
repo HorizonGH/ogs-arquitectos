@@ -73,13 +73,13 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 md:px-10">
           <div className="mb-12 flex flex-wrap items-end justify-between gap-5"><div><p className="mb-3 text-xs font-extrabold uppercase text-primary-strong">Obra seleccionada</p><h2 className="text-4xl font-extrabold sm:text-5xl">Proyectos recientes</h2></div><Link to="/proyectos" className="text-sm font-semibold text-primary-strong hover:underline">Ver todos</Link></div>
           <div className="grid gap-x-6 gap-y-12 md:grid-cols-12">
-            {projects.slice(0, 3).map((project, index) => (
+            {projects.map((project, index) => (
               <article key={project.title} className={index === 0 ? "md:col-span-8" : index === 1 ? "md:col-span-4" : "md:col-span-7 md:col-start-6"}>
                 <div className={`group relative overflow-hidden bg-carbon ${index === 1 ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
-                  <img src={project.image} alt={`${project.title}, ${project.type}`} width={1200} height={912} loading="lazy" className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.025]" />
+                  <img src={project.image} alt={`${project.title}, ${project.type} en ${project.place}`} width={1200} height={912} loading="lazy" className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.025]" />
                   <span className="absolute right-0 top-0 grid size-12 place-items-center bg-primary text-primary-foreground opacity-0 transition-opacity group-hover:opacity-100"><ArrowDownRight /></span>
                 </div>
-                <div className="mt-5 border-t-2 border-foreground pt-4"><h3 className="text-2xl font-extrabold">{project.title}</h3><p className="mt-1 text-sm text-muted-foreground">{project.type}</p></div>
+                <div className="mt-5 grid grid-cols-[1fr_auto] gap-4 border-t-2 border-foreground pt-4"><div><h3 className="text-2xl font-extrabold">{project.title}</h3><p className="mt-1 text-sm text-muted-foreground">{project.type}</p></div><div className="text-right text-xs font-semibold text-muted-foreground"><p>{project.place}</p><p>{project.year}</p></div></div>
               </article>
             ))}
           </div>
