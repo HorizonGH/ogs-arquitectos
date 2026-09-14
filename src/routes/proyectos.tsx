@@ -61,7 +61,7 @@ function ProyectosPage() {
                     </span>
                   </div>
                   <div className="md:col-span-4">
-                    <h2 className="border-t-2 border-foreground pt-5 text-4xl font-extrabold">{project.title}</h2>
+                    <h2 className="border-t-2 border-foreground pt-4 text-3xl font-extrabold">{project.title}</h2>
                     <dl className="mt-7 space-y-4">
                       <div className="flex justify-between border-b border-border pb-3">
                         <dt className="text-sm font-semibold text-muted-foreground">Año</dt>

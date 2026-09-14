@@ -61,7 +61,7 @@ function Index() {
               <span className="h-px w-10 bg-primary" /> Arquitectura · Diseño · Ciudad
             </p>
             <h1
-              className="max-w-4xl text-6xl font-extrabold leading-[1.0] text-background sm:text-7xl md:text-8xl lg:text-9xl animate-fade-up"
+              className="max-w-4xl text-5xl font-extrabold leading-[1.03] text-background sm:text-6xl md:text-7xl lg:text-8xl animate-fade-up"
               style={{ animationDelay: "180ms" }}
             >
               Diseñamos espacios que <span className="text-primary">permanecen.</span>
@@ -71,7 +71,7 @@ function Index() {
             className="border-l-2 border-primary pl-6 animate-fade-up"
             style={{ animationDelay: "350ms" }}
           >
-            <p className="mb-7 text-lg leading-relaxed text-background/80">
+            <p className="mb-7 text-base leading-relaxed text-background/80">
               Arquitectura contemporánea que reconoce el lugar, transforma lo existente y mejora la vida cotidiana.
             </p>
             <Button asChild variant="architectural" size="lg">
@@ -106,9 +106,9 @@ function Index() {
           <Reveal className="mb-14 grid gap-5 border-b border-border pb-10 md:grid-cols-2 md:items-end">
             <div>
               <p className="mb-3 text-xs font-extrabold uppercase text-primary-strong">Lo que hacemos</p>
-              <h2 className="text-5xl font-extrabold sm:text-6xl">Servicios integrales</h2>
+              <h2 className="text-4xl font-extrabold sm:text-5xl">Servicios integrales</h2>
             </div>
-            <p className="max-w-lg text-lg leading-relaxed text-muted-foreground md:justify-self-end">
+            <p className="max-w-lg text-base leading-relaxed text-muted-foreground md:justify-self-end">
               Acompañamos cada proyecto desde la primera medición hasta el último detalle construido.
             </p>
           </Reveal>
@@ -120,7 +120,7 @@ function Index() {
                     <Icon className="size-8 text-primary-strong transition-colors group-hover:text-primary-foreground" strokeWidth={1.6} />
                     <span className="text-xs font-bold text-muted-foreground group-hover:text-primary-foreground/65">{number}</span>
                   </div>
-                  <h3 className="mb-3 text-2xl font-extrabold">{title}</h3>
+                  <h3 className="mb-3 text-xl font-extrabold">{title}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground group-hover:text-primary-foreground/80">{text}</p>
                 </article>
               ))}
@@ -140,7 +140,7 @@ function Index() {
           <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-5">
             <div>
               <p className="mb-3 text-xs font-extrabold uppercase text-primary-strong">Obra seleccionada</p>
-              <h2 className="text-5xl font-extrabold sm:text-6xl">Proyectos recientes</h2>
+              <h2 className="text-4xl font-extrabold sm:text-5xl">Proyectos recientes</h2>
             </div>
             <Link to="/proyectos" className="text-sm font-semibold text-primary-strong hover:underline">
               Ver todos
@@ -165,7 +165,7 @@ function Index() {
                   </div>
                   <div className="mt-5 grid grid-cols-[1fr_auto] gap-4 border-t-2 border-foreground pt-4">
                     <div>
-                      <h3 className="text-3xl font-extrabold">{project.title}</h3>
+                      <h3 className="text-2xl font-extrabold">{project.title}</h3>
                       <p className="mt-1 text-sm text-muted-foreground">{project.type}</p>
                     </div>
                     <div className="text-right text-xs font-semibold text-muted-foreground">
@@ -190,10 +190,10 @@ function Index() {
             </span>
           </Reveal>
           <Reveal delay={150}>
-            <h2 className="max-w-3xl text-5xl font-extrabold leading-[1.05] text-primary-foreground sm:text-6xl">
+            <h2 className="max-w-3xl text-4xl font-extrabold leading-tight text-primary-foreground sm:text-5xl">
               Cada proyecto comienza por escuchar el lugar.
             </h2>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-primary-foreground/75">
+            <p className="mt-7 max-w-2xl text-base leading-relaxed text-primary-foreground/75">
               Somos un estudio de arquitectura enfocado en soluciones precisas, responsables y duraderas. Diseñamos desde la realidad del clima, la ciudad y las personas que habitan cada espacio.
             </p>
             <div className="mt-8">
