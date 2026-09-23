@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { services, projects } from "@/lib/site-content";
-import heroImage from "@/assets/ogs-hero.jpg";
+import heroImage from "@/assets/ogs-hero.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -152,7 +152,7 @@ function Index() {
                 <article>
                   <div className={`group relative overflow-hidden bg-carbon ${index === 1 ? "aspect-[2/3]" : "aspect-[4/3]"}`}>
                     <img
-                      src={project.image}
+                      src={project.images[0]}
                       alt={`${project.title}, ${project.type} en ${project.place}`}
                       width={1200}
                       height={912}

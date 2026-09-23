@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { AccessibilityPanel } from "@/components/accessibility-panel";
 
 function NotFoundComponent() {
   return (
@@ -146,6 +147,7 @@ function RootComponent() {
         <WhatsAppIcon className="size-7 text-white" />
       </a>
 
+      <AccessibilityPanel />
     </QueryClientProvider>
   );
 }

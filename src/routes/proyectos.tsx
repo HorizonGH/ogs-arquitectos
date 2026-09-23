@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDownRight } from "lucide-react";
 
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
+import { ProjectCarousel } from "@/components/project-carousel";
 import { projects } from "@/lib/site-content";
 
 export const Route = createFileRoute("/proyectos")({
@@ -34,7 +34,7 @@ function ProyectosPage() {
       <PageHero
         eyebrow="Obra seleccionada"
         title="Proyectos"
-        intro="Cada obra responde al clima, la ciudad y a las personas que la habitan. Estos son algunos trabajos recientes."
+        intro="Cada proyecto responde a las necesidades de cada cliente, teniendo en cuenta el contexto, soluciones espaciales, funcionales y constructivas. Estos son algunos de los trabajos desarrollados por el estudio."
       />
 
       <section className="bg-background py-24 md:py-32">
@@ -43,39 +43,30 @@ function ProyectosPage() {
             {projects.map((project, index) => (
               <Reveal key={project.title}>
                 <article className="grid gap-6 md:grid-cols-12 md:items-start">
-                  <div
-                    className={`group relative overflow-hidden bg-carbon md:col-span-8 ${
-                      index % 2 === 1 ? "md:order-2" : ""
-                    } aspect-[4/3]`}
-                  >
-                    <img
-                      src={project.image}
-                      alt={`${project.title}, ${project.type} en ${project.place}`}
-                      width={1200}
-                      height={900}
-                      loading="lazy"
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
-                    />
-                    <span className="absolute right-0 top-0 grid size-12 place-items-center bg-primary text-primary-foreground opacity-0 transition-opacity group-hover:opacity-100">
-                      <ArrowDownRight />
-                    </span>
-                  </div>
+                  <ProjectCarousel
+                    images={project.images}
+                    alt={`${project.title}, ${project.type} en ${project.place}`}
+                    className={`md:col-span-8 ${index % 2 === 1 ? "md:order-2" : ""}`}
+                  />
                   <div className="md:col-span-4">
-                    <h2 className="border-t-2 border-foreground pt-4 text-3xl font-extrabold">{project.title}</h2>
-                    <dl className="mt-7 space-y-4">
-                      <div className="flex justify-between border-b border-border pb-3">
-                        <dt className="text-sm font-semibold text-muted-foreground">Año</dt>
-                        <dd className="text-sm font-bold">{project.year}</dd>
+                    <h2 className="border-t-2 border-foreground pt-4 text-2xl font-extrabold leading-snug">{project.title}</h2>
+                    <dl className="mt-6 space-y-3">
+                      <div className="flex justify-between gap-4 border-b border-border pb-2">
+                        <dt className="text-xs font-semibold text-muted-foreground shrink-0">Año</dt>
+                        <dd className="text-xs font-bold text-right">{project.year}</dd>
                       </div>
-                      <div className="flex justify-between border-b border-border pb-3">
-                        <dt className="text-sm font-semibold text-muted-foreground">Ubicación</dt>
-                        <dd className="text-sm font-bold">{project.place}</dd>
+                      <div className="flex justify-between gap-4 border-b border-border pb-2">
+                        <dt className="text-xs font-semibold text-muted-foreground shrink-0">Ubicación</dt>
+                        <dd className="text-xs font-bold text-right">{project.place}</dd>
                       </div>
-                      <div className="flex justify-between border-b border-border pb-3">
-                        <dt className="text-sm font-semibold text-muted-foreground">Intervención</dt>
-                        <dd className="text-sm font-bold">{project.type}</dd>
+                      <div className="flex justify-between gap-4 border-b border-border pb-2">
+                        <dt className="text-xs font-semibold text-muted-foreground shrink-0">Intervención</dt>
+                        <dd className="text-xs font-bold text-right">{project.type}</dd>
                       </div>
                     </dl>
+                    {project.note && (
+                      <p className="mt-4 text-[11px] leading-relaxed text-muted-foreground italic">{project.note}</p>
+                    )}
                   </div>
                 </article>
               </Reveal>

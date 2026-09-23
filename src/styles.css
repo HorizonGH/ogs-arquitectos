@@ -185,3 +185,40 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+/* ── Accessibility overrides ──────────────────────────────────── */
+
+/* Sin color de acento: reemplaza el dorado/mostaza por gris neutro */
+.a11y-bw {
+  --primary: oklch(0.55 0 0);
+  --primary-strong: oklch(0.42 0 0);
+  --primary-foreground: oklch(0.98 0 0);
+}
+
+/* Texto grande: aumenta el tamaño base ~20% */
+.a11y-large-text {
+  font-size: 120%;
+}
+
+/* Alto contraste: maximiza contraste de texto y bordes */
+.a11y-high-contrast {
+  --foreground: oklch(0 0 0);
+  --background: oklch(1 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0 0 0);
+  --muted-foreground: oklch(0.22 0 0);
+  --border: oklch(0.35 0 0);
+  --surface: oklch(0.94 0 0);
+}
+
+/* Reducir animaciones: detiene animaciones y transiciones */
+.a11y-reduce-motion *,
+.a11y-reduce-motion *::before,
+.a11y-reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+.a11y-reduce-motion {
+  scroll-behavior: auto !important;
+}
