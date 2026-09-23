@@ -126,11 +126,6 @@ function Index() {
               ))}
             </div>
           </Reveal>
-          <Reveal className="mt-10">
-            <Button asChild variant="architectural" size="lg">
-              <Link to="/servicios">Todos los servicios <ArrowRight /></Link>
-            </Button>
-          </Reveal>
         </div>
       </section>
 

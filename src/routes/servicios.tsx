@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -57,6 +58,23 @@ function ServiciosPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-surface py-16 md:py-20 border-t border-border">
+        <div className="mx-auto max-w-7xl px-5 md:px-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs font-extrabold uppercase text-primary-strong mb-1">Documentación</p>
+            <p className="text-lg font-extrabold text-foreground">Ver catálogo de servicios</p>
+          </div>
+          <a
+            href="https://drive.google.com/file/d/1ohetjL9xVI5WTvPGbU5tY6T8Cxm1woDJ/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border-2 border-foreground bg-transparent px-6 py-3 text-sm font-extrabold text-foreground transition-colors hover:bg-foreground hover:text-background shrink-0"
+          >
+            Abrir catálogo <ArrowUpRight className="size-4" />
+          </a>
         </div>
       </section>
 
