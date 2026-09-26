@@ -29,9 +29,9 @@ export const Route = createFileRoute("/servicios")({
 
 const process = [
   { number: "01", title: "Diagnóstico", text: "Visita, medición y lectura del contexto para entender el punto de partida." },
-  { number: "02", title: "Propuesta", text: "Estrategia de intervención, alcance, plazos y criterios de materialidad." },
+  { number: "02", title: "Propuesta", text: "Estrategia de intervención, alcance, plazos y criterios de diseño." },
   { number: "03", title: "Proyecto", text: "Desarrollo técnico completo con planos, detalles y documentación de obra." },
-  { number: "04", title: "Ejecución", text: "Acompañamiento en obra para garantizar coherencia entre idea y resultado." },
+  { number: "04", title: "Ejecución", text: "Asesoramiento del trabajo en obra para garantizar calidad en los procesos constructivos y correspondencia entre propuesta inicial y resultado final." },
 ];
 
 function ServiciosPage() {

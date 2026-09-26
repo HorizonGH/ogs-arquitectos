@@ -25,14 +25,14 @@ export const Route = createFileRoute("/estudio")({
 });
 
 const values = [
-  { title: "Contexto", text: "Cada decisión nace del clima, la calle y la vida que ya existe en el lugar." },
+  { title: "Contexto", text: "Cada decisión nace del entorno y la vida social existente en el lugar." },
   { title: "Precisión", text: "Documentación rigurosa y detalles resueltos antes de levantar el primer muro." },
-  { title: "Permanencia", text: "Materiales y soluciones que envejecen bien y resisten el paso del tiempo." },
+  { title: "Permanencia", text: "Soluciones y materiales que permanecen y resisten el paso del tiempo." },
 ];
 
 const facts = [
-  { value: "+10", label: "Años de experiencia" },
-  { value: "+40", label: "Proyectos desarrollados" },
+  { value: "+5", label: "Años de experiencia en el sector" },
+  { value: "+30", label: "Proyectos desarrollados" },
   { value: "100%", label: "Seguimiento en obra" },
 ];
 
@@ -42,7 +42,7 @@ function EstudioPage() {
       <SiteHeader />
       <PageHero
         eyebrow="Nuestro enfoque"
-        title="Cada proyecto comienza por escuchar el lugar."
+        title="Cada proyecto comienza por conocer el contexto."
         intro="Un estudio pequeño y cercano, con criterio técnico y atención a cada detalle del proceso."
       />
 
@@ -53,7 +53,7 @@ function EstudioPage() {
           </span>
           <div>
             <h2 className="max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl">
-              Arquitectura responsable, hecha desde la realidad de cada encargo.
+              Proyectos responsables, hechos desde la realidad de cada encargo.
             </h2>
             <p className="mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground">
               Trabajamos con clientes que buscan claridad: saber qué se puede hacer, cuánto cuesta y cómo se construye.

@@ -58,13 +58,13 @@ function Index() {
               className="mb-5 flex items-center gap-3 text-xs font-bold uppercase text-primary animate-fade-up"
               style={{ animationDelay: "50ms" }}
             >
-              <span className="h-px w-10 bg-primary" /> Arquitectura · Diseño · Ciudad
+              <span className="h-px w-10 bg-primary" /> Arquitectura · Diseño · Ejecución
             </p>
             <h1
               className="max-w-4xl text-5xl font-extrabold leading-[1.03] text-background sm:text-6xl md:text-7xl lg:text-8xl animate-fade-up"
               style={{ animationDelay: "180ms" }}
             >
-              Diseñamos espacios que <span className="text-primary">permanecen.</span>
+              Transformamos tus ideas <span className="text-primary">en realidad.</span>
             </h1>
           </div>
           <div
@@ -72,7 +72,7 @@ function Index() {
             style={{ animationDelay: "350ms" }}
           >
             <p className="mb-7 text-base leading-relaxed text-background/80">
-              Arquitectura contemporánea que reconoce el lugar, transforma lo existente y mejora la vida cotidiana.
+              Proyectos de diseño y arquitectura que transforman espacios y mejoran la calidad de vida de sus usuarios.
             </p>
             <Button asChild variant="architectural" size="lg">
               <Link to="/proyectos">Ver proyectos <ArrowRight /></Link>
@@ -186,7 +186,7 @@ function Index() {
           </Reveal>
           <Reveal delay={150}>
             <h2 className="max-w-3xl text-4xl font-extrabold leading-tight text-primary-foreground sm:text-5xl">
-              Cada proyecto comienza por escuchar el lugar.
+              Cada proyecto comienza por conocer el contexto.
             </h2>
             <p className="mt-7 max-w-2xl text-base leading-relaxed text-primary-foreground/75">
               Somos un estudio de arquitectura enfocado en soluciones precisas, responsables y duraderas. Diseñamos desde la realidad del clima, la ciudad y las personas que habitan cada espacio.

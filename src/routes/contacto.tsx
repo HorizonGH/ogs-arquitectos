@@ -25,11 +25,11 @@ export const Route = createFileRoute("/contacto")({
 });
 
 const MAPS_URL =
-  "https://www.google.com/maps/search/calle+armas+n+976,+san+mariano+y+Santa+Catalina,+municipio+10+de+octubre/@23.0893899,-82.3601518,16.5z/data=!4m2!2m1!6e1?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D";
+  "https://www.google.com/maps/search/Calle+23+entre+Calle+A+y+Calle+B,+Vedado,+Municipio+Plaza+de+la+Revolución,+La+Habana,+Cuba";
 
 const details = [
   {
-    label: "Directora",
+    label: "Director",
     value: "Arq. Orliet González Santanache",
     icon: null,
   },
@@ -41,8 +41,8 @@ const details = [
   },
   {
     label: "Correo",
-    value: "orlietglezs@gmail.com",
-    href: "mailto:orlietglezs@gmail.com",
+    value: "ogsarquitectos@gmail.com",
+    href: "mailto:ogsarquitectos@gmail.com",
     icon: Mail,
   },
   {
@@ -53,7 +53,7 @@ const details = [
   },
   {
     label: "Dirección",
-    value: "Calle Armas n° 976, e/ San Mariano y Santa Catalina, municipio 10 de Octubre, La Habana",
+    value: "Calle 23 entre Calle A y Calle B, edificio 809, Vedado, Municipio Plaza de la Revolución, Provincia La Habana",
     href: MAPS_URL,
     icon: MapPin,
   },
@@ -66,7 +66,7 @@ function ContactoPage() {
       <PageHero
         eyebrow="Hablemos"
         title="Contacto"
-        intro="Cuéntenos dónde está el inmueble, qué necesita y en qué plazo. Le respondemos con los próximos pasos."
+        intro="Cuéntenos sobre sus necesidades, servicios a desarrollar y plazos de ejecución. Le responderemos con los próximos pasos."
       />
 
       <section className="bg-background py-24 md:py-32">
@@ -78,7 +78,7 @@ function ContactoPage() {
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button asChild variant="architectural" size="lg">
-                <a href="mailto:orlietglezs@gmail.com">
+                <a href="mailto:ogsarquitectos@gmail.com">
                   Enviar correo <ArrowRight />
                 </a>
               </Button>

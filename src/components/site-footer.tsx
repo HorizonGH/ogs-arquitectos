@@ -6,7 +6,7 @@ import { Brand } from "@/components/site-header";
 import { Reveal } from "@/components/reveal";
 
 const MAPS_URL =
-  "https://www.google.com/maps/search/calle+armas+n+976,+san+mariano+y+Santa+Catalina,+municipio+10+de+octubre/@23.0893899,-82.3601518,16.5z/data=!4m2!2m1!6e1?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D";
+  "https://www.google.com/maps/search/Calle+23+entre+Calle+A+y+Calle+B,+Vedado,+Municipio+Plaza+de+la+Revolución,+La+Habana,+Cuba";
 
 const nav = [
   {
@@ -21,20 +21,20 @@ const nav = [
     heading: "Servicios",
     links: [
       { label: "Levantamiento técnico", to: "/servicios" },
-      { label: "Diseño e intervención", to: "/servicios" },
-      { label: "Asesoramiento de obra", to: "/servicios" },
-      { label: "Documentación", to: "/servicios" },
-      { label: "Diseño gráfico", to: "/servicios" },
-      { label: "Presupuestos", to: "/servicios" },
+      { label: "Diseño e intervención de espacios", to: "/servicios" },
+      { label: "Asesoramiento técnico de obra", to: "/servicios" },
+      { label: "Elaboración de documentación técnica", to: "/servicios" },
+      { label: "Diseño gráfico, de mobiliario e identidad", to: "/servicios" },
+      { label: "Elaboración de presupuestos de construcción", to: "/servicios" },
     ],
   },
 ];
 
 const contact = [
   { icon: Phone, label: "+53 54867902", href: "tel:+5354867902" },
-  { icon: Mail, label: "orlietglezs@gmail.com", href: "mailto:orlietglezs@gmail.com" },
+  { icon: Mail, label: "ogsarquitectos@gmail.com", href: "mailto:ogsarquitectos@gmail.com" },
   { icon: Instagram, label: "@ogs_arquitectos", href: "https://instagram.com/ogs_arquitectos" },
-  { icon: MapPin, label: "Calle Armas n° 976, municipio 10 de Octubre, La Habana", href: MAPS_URL },
+  { icon: MapPin, label: "Calle 23 entre A y B, edificio 809, Vedado, Plaza de la Revolución, La Habana", href: MAPS_URL },
 ];
 
 export function SiteFooter() {
@@ -49,7 +49,7 @@ export function SiteFooter() {
               Conversemos sobre cómo hacerlo posible.
             </h2>
             <Button asChild variant="architectural" size="lg">
-              <a href="mailto:orlietglezs@gmail.com">
+              <a href="mailto:ogsarquitectos@gmail.com">
                 Escríbanos <ArrowRight />
               </a>
             </Button>
@@ -65,7 +65,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-6">
             <Brand inverse />
             <p className="max-w-xs text-sm leading-relaxed text-background/60">
-              Estudio de arquitectura e interiorismo con sede en La Habana. Diseñamos espacios precisos, responsables y duraderos.
+              Estudio de arquitectura, diseño y ejecución con sede en La Habana, especializado en trabajo creativo y asesoramiento de procesos constructivos. Ayudamos a negocios y emprendimientos a transformar sus ideas en realidad.
             </p>
             <a
               href="https://instagram.com/ogs_arquitectos"
