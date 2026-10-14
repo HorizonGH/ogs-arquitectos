@@ -6,6 +6,29 @@ import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { ProjectCarousel } from "@/components/project-carousel";
 import { projects } from "@/lib/site-content";
+import { absoluteUrl, breadcrumbSchema, jsonLd, pageSeo } from "@/lib/seo";
+
+const seo = pageSeo("/proyectos");
+
+const projectsSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Proyectos de OGS Arquitectos",
+  itemListElement: projects.map((project, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "CreativeWork",
+      name: project.title,
+      description: project.description,
+      genre: project.type,
+      dateCreated: project.year,
+      locationCreated: { "@type": "Place", name: project.place },
+      creator: { "@type": "Organization", name: "OGS Arquitectos" },
+      image: project.images.map(({ src }) => absoluteUrl(src)),
+    },
+  })),
+};
 
 export const Route = createFileRoute("/proyectos")({
   head: () => ({
@@ -22,7 +45,10 @@ export const Route = createFileRoute("/proyectos")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...seo.meta,
     ],
+    links: seo.links,
+    scripts: [jsonLd(breadcrumbSchema("Proyectos", "/proyectos")), jsonLd(projectsSchema)],
   }),
   component: ProyectosPage,
 });

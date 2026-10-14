@@ -3,6 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageHero } from "@/components/page-hero";
+import { breadcrumbSchema, jsonLd, pageSeo } from "@/lib/seo";
+
+const seo = pageSeo("/estudio");
 
 export const Route = createFileRoute("/estudio")({
   head: () => ({
@@ -19,7 +22,10 @@ export const Route = createFileRoute("/estudio")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...seo.meta,
     ],
+    links: seo.links,
+    scripts: [jsonLd(breadcrumbSchema("Estudio", "/estudio"))],
   }),
   component: EstudioPage,
 });

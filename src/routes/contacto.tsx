@@ -6,6 +6,9 @@ import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageHero } from "@/components/page-hero";
+import { breadcrumbSchema, jsonLd, pageSeo } from "@/lib/seo";
+
+const seo = pageSeo("/contacto");
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -19,7 +22,10 @@ export const Route = createFileRoute("/contacto")({
       { property: "og:description", content: "Cuéntenos su idea y le respondemos con los próximos pasos." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...seo.meta,
     ],
+    links: seo.links,
+    scripts: [jsonLd(breadcrumbSchema("Contacto", "/contacto"))],
   }),
   component: ContactoPage,
 });

@@ -6,13 +6,18 @@ import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { services, projects } from "@/lib/site-content";
+import { OG_IMAGE, SITE_NAME, SITE_URL, absoluteUrl, jsonLd, pageSeo } from "@/lib/seo";
 import heroImage from "@/assets/ogs-hero.webp";
 
 // Datos de negocio local para Google (búsqueda local y Maps)
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "OGS Arquitectos",
+  "@id": `${SITE_URL}/#estudio`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: absoluteUrl("/favicon.svg"),
+  image: [OG_IMAGE.url, absoluteUrl(heroImage)],
   description:
     "Estudio de arquitectura con sede en La Habana, especializado en diseño, asesoramiento y diagnóstico técnico de espacios comerciales y residenciales.",
   telephone: "+53 54867902",
@@ -24,11 +29,33 @@ const localBusinessSchema = {
     addressRegion: "La Habana",
     addressCountry: "CU",
   },
+  geo: { "@type": "GeoCoordinates", latitude: 23.13199, longitude: -82.39297 },
   hasMap: "https://www.google.com/maps/search/?api=1&query=Calle+23+809,+Vedado,+La+Habana,+Cuba",
   areaServed: { "@type": "City", name: "La Habana" },
   founder: { "@type": "Person", name: "Orliet González Santanache", jobTitle: "Arquitecto" },
   sameAs: ["https://instagram.com/ogs_arquitectos"],
+  knowsLanguage: "es",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Servicios de arquitectura",
+    itemListElement: services.map(({ title, text }) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: title, description: text },
+    })),
+  },
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#web`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  inLanguage: "es",
+  publisher: { "@id": `${SITE_URL}/#estudio` },
+};
+
+const seo = pageSeo("/");
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,8 +72,10 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...seo.meta,
     ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(localBusinessSchema) }],
+    links: seo.links,
+    scripts: [jsonLd(localBusinessSchema), jsonLd(websiteSchema)],
   }),
   component: Index,
 });
@@ -72,6 +101,7 @@ function Index() {
           alt="Render de vivienda blanca de dos plantas con terraza techada, escalera exterior y árboles alrededor"
           width={1920}
           height={1280}
+          fetchPriority="high"
           className="absolute inset-0 size-full object-cover"
         />
         <div className="absolute inset-0 bg-carbon/55" />

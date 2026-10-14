@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { LegalPage, type LegalSection } from "@/components/legal-page";
+import { pageSeo } from "@/lib/seo";
+
+const seo = pageSeo("/aviso-legal");
 
 export const Route = createFileRoute("/aviso-legal")({
   head: () => ({
@@ -8,7 +11,9 @@ export const Route = createFileRoute("/aviso-legal")({
       { title: "Aviso legal | OGS Arquitectos" },
       { name: "description", content: "Datos del titular y condiciones de uso del sitio web de OGS Arquitectos." },
       { name: "robots", content: "noindex, follow" },
+      ...seo.meta,
     ],
+    links: seo.links,
   }),
   component: AvisoLegalPage,
 });

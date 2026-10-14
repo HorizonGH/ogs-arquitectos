@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { AccessibilityPanel } from "@/components/accessibility-panel";
+import { OG_IMAGE, SITE_NAME } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -84,7 +85,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "OGS Arquitectos" },
       { property: "og:description", content: "Arquitectura, diseño y asesoramiento técnico en La Habana." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:locale", content: "es_ES" },
+      { property: "og:image", content: OG_IMAGE.url },
+      { property: "og:image:type", content: "image/webp" },
+      { property: "og:image:width", content: String(OG_IMAGE.width) },
+      { property: "og:image:height", content: String(OG_IMAGE.height) },
+      { property: "og:image:alt", content: OG_IMAGE.alt },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE.url },
+      { name: "twitter:image:alt", content: OG_IMAGE.alt },
+      { name: "theme-color", content: "#323232" },
     ],
     links: [
       {

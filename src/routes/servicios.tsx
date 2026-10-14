@@ -5,6 +5,26 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { PageHero } from "@/components/page-hero";
 import { services } from "@/lib/site-content";
+import { breadcrumbSchema, jsonLd, pageSeo } from "@/lib/seo";
+
+const seo = pageSeo("/servicios");
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Servicios de OGS Arquitectos",
+  itemListElement: services.map(({ title, text }, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Service",
+      name: title,
+      description: text,
+      areaServed: { "@type": "City", name: "La Habana" },
+      provider: { "@type": "ProfessionalService", name: "OGS Arquitectos" },
+    },
+  })),
+};
 
 export const Route = createFileRoute("/servicios")({
   head: () => ({
@@ -22,7 +42,10 @@ export const Route = createFileRoute("/servicios")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...seo.meta,
     ],
+    links: seo.links,
+    scripts: [jsonLd(breadcrumbSchema("Servicios", "/servicios")), jsonLd(servicesSchema)],
   }),
   component: ServiciosPage,
 });

@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { LegalPage, type LegalSection } from "@/components/legal-page";
+import { pageSeo } from "@/lib/seo";
+
+const seo = pageSeo("/privacidad");
 
 export const Route = createFileRoute("/privacidad")({
   head: () => ({
@@ -8,7 +11,9 @@ export const Route = createFileRoute("/privacidad")({
       { title: "Política de privacidad | OGS Arquitectos" },
       { name: "description", content: "Cómo trata OGS Arquitectos los datos personales de quienes le contactan." },
       { name: "robots", content: "noindex, follow" },
+      ...seo.meta,
     ],
+    links: seo.links,
   }),
   component: PrivacidadPage,
 });
