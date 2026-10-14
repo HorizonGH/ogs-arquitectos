@@ -43,19 +43,19 @@ const facts = [
 
 const team = [
   {
-    photo: "/images/Picture1.png",
+    photo: "/images/Picture1.webp",
     name: "Arq. Orliet González Santanache",
     role: "CEO y arquitecto principal",
     bio: "Especializado en diseño, visualización gráfica y ejecución de proyectos de arquitectura e ingeniería, desde la fase de ideas conceptuales hasta la fase ejecutiva. Arquitecto con experiencia laboral en control técnico de inversiones en el sector de la construcción y desarrollo de soluciones de diseño para proyectos de remodelación de espacios comerciales y residenciales tanto en el sector estatal como privado.",
   },
   {
-    photo: "/images/Picture3.png",
+    photo: "/images/Picture3.webp",
     name: "Alejandro Benítez Cruz",
     role: "Modelado 3D y representación gráfica",
     bio: "Estudiante de Arquitectura, con experiencia en proyectos de diseño arquitectónico en áreas como arquitectura hospitalaria, residencial, urbanismo y arquitectura del paisaje. Su formación incluye además estudios vinculados al Patrimonio Mundial. Cuenta con desempeño laboral en proyectos arquitectónicos, levantamientos y modelación 3D, integrando competencias técnicas y gráficas para la representación y visualización de propuestas arquitectónicas.",
   },
   {
-    photo: "/images/Picture2.png",
+    photo: "/images/Picture2.webp",
     name: "Liván Blanco González",
     role: "Modelado 3D y representación gráfica",
     bio: "Estudiante de Arquitectura con experiencia laboral real en proyectos con varios profesionales y formación complementada con trabajo de campo. Habilidades en visualización arquitectónica, representación gráfica y técnica y modelado 3D, logrando resultados competentes que transmiten la intención del proyecto. Destacado durante su formación docente en trabajos académicos con enfoques conceptuales que combinan precisión y sensibilidad.",

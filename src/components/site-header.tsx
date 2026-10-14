@@ -12,9 +12,13 @@ export const navLinks = [
 export function Brand({ inverse = false }: { inverse?: boolean }) {
   return (
     <Link to="/" className="group inline-flex items-center gap-3" aria-label="OGS Arquitectos, inicio">
-      <span className={`relative block size-9 shrink-0 ${inverse ? "bg-primary" : "bg-carbon"}`}>
-        <span className={`absolute bottom-1.5 right-1.5 h-3 w-1.5 ${inverse ? "bg-carbon" : "bg-background"}`} />
-      </span>
+      <svg
+        viewBox="0 0 36 36"
+        aria-hidden="true"
+        className={`block size-9 shrink-0 ${inverse ? "text-primary" : "text-carbon"}`}
+      >
+        <path fill="currentColor" fillRule="evenodd" d="M0 0H36V36H0Z M24 18H30V30H24Z" />
+      </svg>
       <span className={`text-base font-extrabold ${inverse ? "text-primary" : "text-foreground"}`}>
         OGS Arquitectos
       </span>
