@@ -45,11 +45,11 @@ function ProyectosPage() {
                 <article className="grid gap-6 md:grid-cols-12 md:items-start">
                   <ProjectCarousel
                     images={project.images}
-                    alt={`${project.title}, ${project.type} en ${project.place}`}
                     className={`md:col-span-8 ${index % 2 === 1 ? "md:order-2" : ""}`}
                   />
                   <div className="md:col-span-4">
                     <h2 className="border-t-2 border-foreground pt-4 text-2xl font-extrabold leading-snug">{project.title}</h2>
+                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
                     <dl className="mt-6 space-y-3">
                       <div className="flex justify-between gap-4 border-b border-border pb-2">
                         <dt className="text-xs font-semibold text-muted-foreground shrink-0">Año</dt>

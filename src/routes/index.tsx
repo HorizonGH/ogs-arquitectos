@@ -8,6 +8,28 @@ import { SiteFooter } from "@/components/site-footer";
 import { services, projects } from "@/lib/site-content";
 import heroImage from "@/assets/ogs-hero.webp";
 
+// Datos de negocio local para Google (búsqueda local y Maps)
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "OGS Arquitectos",
+  description:
+    "Estudio de arquitectura con sede en La Habana, especializado en diseño, asesoramiento y diagnóstico técnico de espacios comerciales y residenciales.",
+  telephone: "+53 54867902",
+  email: "ogsarquitectos@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Calle 23 n.º 809, entre A y B, Vedado",
+    addressLocality: "La Habana",
+    addressRegion: "La Habana",
+    addressCountry: "CU",
+  },
+  hasMap: "https://www.google.com/maps/search/?api=1&query=Calle+23+809,+Vedado,+La+Habana,+Cuba",
+  areaServed: { "@type": "City", name: "La Habana" },
+  founder: { "@type": "Person", name: "Orliet González Santanache", jobTitle: "Arquitecto" },
+  sameAs: ["https://instagram.com/ogs_arquitectos"],
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -24,6 +46,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(localBusinessSchema) }],
   }),
   component: Index,
 });
@@ -46,7 +69,7 @@ function Index() {
       <section id="inicio" className="relative flex min-h-[92svh] items-end bg-carbon">
         <img
           src={heroImage}
-          alt="Residencia contemporánea entre palmas en La Habana"
+          alt="Render de vivienda blanca de dos plantas con terraza techada, escalera exterior y árboles alrededor"
           width={1920}
           height={1280}
           className="absolute inset-0 size-full object-cover"
@@ -64,7 +87,7 @@ function Index() {
               className="max-w-4xl text-5xl font-extrabold leading-[1.03] text-background sm:text-6xl md:text-7xl lg:text-8xl animate-fade-up"
               style={{ animationDelay: "180ms" }}
             >
-              Transformamos tus ideas <span className="text-primary">en realidad.</span>
+              Transformamos sus ideas <span className="text-primary">en realidad.</span>
             </h1>
           </div>
           <div
@@ -85,8 +108,8 @@ function Index() {
       </section>
 
       {/* Marquee strip */}
-      <div className="overflow-hidden border-y border-border bg-surface py-5 select-none">
-        <div className="flex animate-marquee whitespace-nowrap">
+      <div aria-hidden="true" className="overflow-hidden border-y border-border bg-surface py-5 select-none">
+        <div className="marquee-track flex animate-marquee whitespace-nowrap">
           {[0, 1].map((i) => (
             <span key={i} className="flex shrink-0 items-center gap-10 pr-10 text-xs font-bold uppercase tracking-widest text-muted-foreground">
               {MARQUEE_WORDS.map((word) => (
@@ -132,14 +155,9 @@ function Index() {
       {/* Projects */}
       <section className="bg-background py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-10">
-          <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-5">
-            <div>
-              <p className="mb-3 text-xs font-extrabold uppercase text-primary-strong">Obra seleccionada</p>
-              <h2 className="text-4xl font-extrabold sm:text-5xl">Proyectos recientes</h2>
-            </div>
-            <Link to="/proyectos" className="text-sm font-semibold text-primary-strong hover:underline">
-              Ver todos
-            </Link>
+          <Reveal className="mb-14">
+            <p className="mb-3 text-xs font-extrabold uppercase text-primary-strong">Obra seleccionada</p>
+            <h2 className="text-4xl font-extrabold sm:text-5xl">Proyectos recientes</h2>
           </Reveal>
           <div className="grid gap-x-6 gap-y-12 md:grid-cols-12">
             {projects.map((project, index) => (
@@ -147,8 +165,8 @@ function Index() {
                 <article>
                   <div className={`group relative overflow-hidden bg-carbon ${index === 1 ? "aspect-[2/3]" : "aspect-[4/3]"}`}>
                     <img
-                      src={project.images[0]}
-                      alt={`${project.title}, ${project.type} en ${project.place}`}
+                      src={project.images[0]?.src}
+                      alt={project.images[0]?.alt ?? ""}
                       width={1200}
                       height={912}
                       loading="lazy"

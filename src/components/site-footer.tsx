@@ -6,7 +6,7 @@ import { Brand } from "@/components/site-header";
 import { Reveal } from "@/components/reveal";
 
 const MAPS_URL =
-  "https://www.google.com/maps/search/Calle+23+entre+Calle+A+y+Calle+B,+Vedado,+Municipio+Plaza+de+la+Revolución,+La+Habana,+Cuba";
+  "https://www.google.com/maps/search/?api=1&query=Calle+23+809,+Vedado,+La+Habana,+Cuba";
 
 const nav = [
   {
@@ -65,7 +65,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-6">
             <Brand inverse />
             <p className="max-w-xs text-sm leading-relaxed text-background/60">
-              Estudio de arquitectura, diseño y ejecución con sede en La Habana, especializado en trabajo creativo y asesoramiento de procesos constructivos. Ayudamos a negocios y emprendimientos a transformar sus ideas en realidad.
+              Estudio de arquitectura con sede en La Habana, especializado en diseño, asesoramiento y diagnóstico técnico de espacios comerciales y residenciales.
             </p>
             <a
               href="https://instagram.com/ogs_arquitectos"
@@ -122,7 +122,11 @@ export function SiteFooter() {
       <div className="border-t border-background/10">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-5 py-6 md:flex-row md:items-center md:px-10">
           <span className="text-xs text-background/40">© 2026 OGS Arquitectos. Todos los derechos reservados.</span>
-          <span className="text-xs text-background/40">La Habana, Cuba</span>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-background/40">
+            <Link to="/aviso-legal" className="transition-colors hover:text-background">Aviso legal</Link>
+            <Link to="/privacidad" className="transition-colors hover:text-background">Política de privacidad</Link>
+            <span>La Habana, Cuba</span>
+          </div>
         </div>
       </div>
 

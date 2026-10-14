@@ -25,7 +25,7 @@ export const Route = createFileRoute("/contacto")({
 });
 
 const MAPS_URL =
-  "https://www.google.com/maps/search/Calle+23+entre+Calle+A+y+Calle+B,+Vedado,+Municipio+Plaza+de+la+Revolución,+La+Habana,+Cuba";
+  "https://www.google.com/maps/search/?api=1&query=Calle+23+809,+Vedado,+La+Habana,+Cuba";
 
 const details = [
   {

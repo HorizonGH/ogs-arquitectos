@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import type { ProjectImage } from "@/lib/site-content";
 
 interface Props {
-  images: string[];
-  alt: string;
+  images: ProjectImage[];
   className?: string;
 }
 
-export function ProjectCarousel({ images, alt, className }: Props) {
+export function ProjectCarousel({ images, className }: Props) {
   const [current, setCurrent] = useState(0);
   const hasMany = images.length > 1;
 
@@ -29,11 +29,12 @@ export function ProjectCarousel({ images, alt, className }: Props) {
         className,
       )}
     >
-      {images.map((src, i) => (
+      {images.map(({ src, alt }, i) => (
         <img
           key={src}
           src={src}
-          alt={i === 0 ? alt : `${alt} — foto ${i + 1}`}
+          alt={alt}
+          aria-hidden={i === current ? undefined : true}
           width={900}
           height={675}
           loading="lazy"

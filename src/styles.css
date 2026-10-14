@@ -186,6 +186,12 @@
   to { transform: translateX(-50%); }
 }
 
+/* La cinta queda quieta (no solo acelerada) si se pide reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none !important; }
+}
+.a11y-reduce-motion .marquee-track { animation: none !important; }
+
 /* ── Accessibility overrides ──────────────────────────────────── */
 
 /* Sin color de acento: reemplaza el dorado/mostaza por gris neutro */
